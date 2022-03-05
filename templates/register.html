@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block header %}注册{% endblock %}
+{% block content %}
+<section class="ui-container">
+
+<div class="demo-item" style="margin-top: 10%">
+        <div class="demo-block" style="margin-top: 10%">
+            <div class="ui-form ui-border-t">
+                <form action="#" method="post">{% csrf_token %}
+                    <div class="ui-form-item ui-border-b" style="border: none">
+                        <label>
+                            账号
+                        </label>
+                        <input type="text" placeholder="请输入账号" maxlength="20" min="1" name="username"/>
+                        </a>
+                    </div>
+                    <div class="ui-form-item ui-border-b" style="margin-top: 5%">
+                        <label>
+                            密码
+                        </label>
+                         <input type="password" placeholder="请输入密码" minlength="8" name="password"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b" style="margin-top: 5%">
+                        <label>
+                            确认密码
+                        </label>
+                         <input type="password" placeholder="请输入密码" minlength="8" name="confirmpassword"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b" style="margin-top: 5%">
+                        <label>
+                            联系方式
+                        </label>
+                         <input type="text" placeholder="请输入联系方式" minlength="7" maxlength="11" name="tel"/>
+                    </div>
+                    <div class="demo-item" style="margin-top: 5%">
+                        <p class="demo-desc" style="text-align: right;margin-right: 10%;color: dodgerblue">
+                            <a href="login.html">
+                            立即登陆
+                        </a></p>
+                        <div class="demo-block">
+                            <div class="ui-btn-wrap">
+                                <button class="ui-btn-lg ui-btn-primary" type="submit">
+                                    注册
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ui-form-item ui-form-item-link ui-border-b" style="color: red">
+                            {{ tips }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</section><!-- /.ui-container-->
+{% endblock %}

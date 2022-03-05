@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block header %}模板清单{% endblock %}
+{% block content %}
+<section class="ui-container">
+    <section id="table">
+    <div class="demo-item">
+        <div class="demo-block">
+            <table class="ui-table ui-border-tb">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>名称</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for d in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ d.name }}</td>
+                    <td><a href="modelchange.html?pid={{ d.id }}">修改</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="ui-btn-wrap" style="margin-top: 20%">
+                <a href="createmodel.html">
+                    <button class="ui-btn-lg ui-btn-primary">
+                        创建模板
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+
+
+</section>
+{% endblock %}

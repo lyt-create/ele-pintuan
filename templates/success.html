@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block header %}拼团成功{% endblock %}
+{% block content %}
+<section class="ui-container">
+<section id="tips">
+    <div class="demo-item" style="margin-top: 8%">
+        <div class="demo-block">
+            <div  class="ui-tips ui-tips-success">
+                <i></i><span>拼团创建成功，请根据以下提示邀请入团！</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-item" style="margin-top: 5%">
+        <p class="demo-desc">拼团项目：{{ data }}</p>
+        <p class="demo-desc">拼团链接：</p>
+            <div class="demo-block">
+                <ul class="ui-list ui-list-text ui-border-tb">
+                <li class="ui-border-t">
+                    <div class="ui-list-info" id="copypin">
+                        <a href="https://e.lytcreate.com/join.html?pid={{ pid }}">
+                            <h4 class="ui-nowrap">拼团成功，邀请好友：https://e.lytcreate.com/join.html?pid={{ pid }}</h4></a>
+                    </div>
+                    <div class="ui-badge">new</div>
+                </li>
+                </ul>
+            </div>
+
+            <div class="demo-block" style="margin-top: 30%">
+                <div class="ui-btn-wrap">
+                    <button class="ui-btn-lg ui-btn-primary" onclick="copy()">复制链接</button>
+                </div>
+            </div>
+            <div class="demo-block" >
+                <div class="ui-btn-wrap">
+                    <a href="join.html?pid={{ pid }}"><button class="ui-btn-lg ui-btn-danger">去开团</button></a>
+                </div>
+            </div>
+    </div>
+</section>
+</section>
+
+    <script>
+    function copy() {
+        const range = document.createRange();
+        range.selectNode(document.getElementById('copypin'));//需要复制的内容
+        const selection = window.getSelection();
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('copy');
+        alert("复制成功！打开微信分享好友");
+}
+    </script>
+{% endblock %}

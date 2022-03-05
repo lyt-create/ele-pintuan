@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% block header %}模板信息{% endblock %}
+{% block content %}
+<section class="ui-container">
+<div class="demo-item" style="margin-top: 3%">
+        <div class="demo-block">
+            <div class="ui-form ui-border-t">
+                <form action="#" method="post">{% csrf_token %}
+                    <input name="nid" hidden="hidden" value="{{ nid }}">
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            模板名称
+                        </label>
+                        <input value="{{ plist.0 }}" type="text" placeholder="请输入模板名称" maxlength="40" minlength="1" name="name"/>
+                    </div>
+                    <div class="ui-form-item ui-form-item-link ui-border-b">
+                        <a href="createmodel.html" style="font-size: 15px">物品种类请按需填写：</a>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称1
+                        </label>
+                        <input value="{{ plist.1 }}" type="text" placeholder="请输入物品名称" name="w1" minlength="1"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input  value="{{ plist.2 }}" type="number" placeholder="请输入物品价格" name="p1"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称2
+                        </label>
+                        <input value="{{ plist.3 }}" type="text" placeholder="请输入物品名称" name="w2"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.4 }}" type="number" placeholder="请输入物品价格" name="p2"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称3
+                        </label>
+                        <input value="{{ plist.5 }}" type="text" placeholder="请输入物品名称" name="w3"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.6 }}" type="number" placeholder="请输入物品价格" name="p3"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称4
+                        </label>
+                        <input value="{{ plist.7 }}" type="text" placeholder="请输入物品名称" name="w4"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.8 }}" type="number" placeholder="请输入物品价格" name="p4"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称5
+                        </label>
+                        <input value="{{ plist.9 }}" type="text" placeholder="请输入物品名称" name="w5"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.10 }}" type="number" placeholder="请输入物品价格" name="p5"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称6
+                        </label>
+                        <input value="{{ plist.11 }}" type="text" placeholder="请输入物品名称" name="w6"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.12 }}" type="number" placeholder="请输入物品价格" name="p6"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称7
+                        </label>
+                        <input value="{{ plist.13 }}" type="text" placeholder="请输入物品名称" name="w7"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.14 }}" type="number" placeholder="请输入物品价格" name="p7"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称8
+                        </label>
+                        <input value="{{ plist.15 }}" type="text" placeholder="请输入物品名称" name="w8"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.16 }}" type="number" placeholder="请输入物品价格" name="p8"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称9
+                        </label>
+                        <input value="{{ plist.17 }}" type="text" placeholder="请输入物品名称" name="w9"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.18 }}" type="number" placeholder="请输入物品价格" name="p9"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称10
+                        </label>
+                        <input value="{{ plist.19 }}" type="text" placeholder="请输入物品名称" name="w10"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.20 }}" type="number" placeholder="请输入物品价格" name="p10"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称11
+                        </label>
+                        <input value="{{ plist.21 }}" type="text" placeholder="请输入物品名称" name="w11"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.22 }}" type="number" placeholder="请输入物品价格" name="p11"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称12
+                        </label>
+                        <input value="{{ plist.23}}" type="text" placeholder="请输入物品名称" name="w12"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.24 }}" type="number" placeholder="请输入物品价格" name="p12"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称13
+                        </label>
+                        <input value="{{ plist.25 }}" type="text" placeholder="请输入物品名称" name="w13"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.26 }}" type="number" placeholder="请输入物品价格" name="p13"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称14
+                        </label>
+                        <input value="{{ plist.27 }}" type="text" placeholder="请输入物品名称" name="w14"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.28 }}" type="number" placeholder="请输入物品价格" name="p14"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称15
+                        </label>
+                        <input value="{{ plist.29 }}" type="text" placeholder="请输入物品名称" name="w15"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.30 }}" type="number" placeholder="请输入物品价格" name="p15"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品名称16
+                        </label>
+                        <input value="{{ plist.31 }}" type="text" placeholder="请输入物品名称" name="w16"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            物品价格
+                        </label>
+                        <input value="{{ plist.32 }}" type="number" placeholder="请输入物品价格" name="p16"/>
+                    </div>
+
+                    <div class="demo-block" style="margin-top: 5%">
+                        <div class="ui-btn-wrap">
+                                <button class="ui-btn-lg ui-btn-primary" type="submit">
+                                    {{ tip }}
+                                </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block header %}登陆{% endblock %}
+{% block content %}
+<section class="ui-container">
+
+<div class="demo-item" style="margin-top: 2%">
+        <div class="demo-block">
+            <div class="ui-slider">
+                <ul class="ui-slider-content" style="width: 300%;">
+                    <li><span style="background-image:url(../static/images/hu1.png)"></span></li>
+                    <li><span style="background-image:url(../static/images/hu2.png)"></span></li>
+                    <li><span style="background-image:url(../static/images/hu3.png)"></span></li>
+                </ul>
+            </div>
+        </div>
+        <script class="demo-script">
+        (function (){
+            var slider = new fz.Scroll('.ui-slider', {
+                role: 'slider',
+                indicator: true,
+                autoplay: true,
+                interval: 3000
+            });
+
+            slider.on('beforeScrollStart', function(fromIndex, toIndex) {
+                console.log(fromIndex,toIndex)
+            });
+
+            slider.on('scrollEnd', function(cruPage) {
+                console.log(cruPage)
+            });
+        })();
+        </script>
+    </div>
+
+<div class="demo-item" style="margin-top: 2%">
+        <div class="demo-block" style="margin-top: 10%">
+            <div class="ui-form ui-border-t">
+                <form action="" method="post">{% csrf_token %}
+                    <div class="ui-form-item ui-border-b" style="border: none">
+                        <label>
+                            账号
+                        </label>
+                        <input type="text" placeholder="请输入账号" maxlength="20" name="username"/>
+{#                        <a href="#" class="ui-icon-close">#}
+                        </a>
+                    </div>
+                    <div class="ui-form-item ui-border-b" style="margin-top: 5%">
+                        <label>
+                            密码
+                        </label>
+                         <input type="password" placeholder="请输入密码" minlength="8" name="password"/>
+                    </div>
+
+                    <div class="demo-item" style="margin-top: 5%">
+                        <p class="demo-desc" style="text-align: right;margin-right: 10%;color: dodgerblue">
+                            <a href="register.html">
+                            立即注册
+                        </a></p>
+                        <div class="demo-block">
+                            <div class="ui-btn-wrap">
+                                <button class="ui-btn-lg ui-btn-primary" type="submit">
+                                    登陆
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ui-form-item ui-form-item-link ui-border-b" style="color: red">
+                            {{ tips }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</section><!-- /.ui-container-->
+{% endblock %}

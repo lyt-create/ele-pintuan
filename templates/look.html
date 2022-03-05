@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block header %}拼团信息{% endblock %}
+{% block content %}
+<section class="ui-container">
+<div class="demo-item" style="margin-top: 3%">
+        <div class="demo-block">
+            <div class="ui-form ui-border-t">
+                <form action="" method="post">{% csrf_token %}
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团编码：
+                        </label>
+                        <input name="pinid" type="text"  value="{{ pdata.pid }}" readonly="readonly"/>
+                    </div><br>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团名称
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.name }}"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团队长
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.username }}"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系团长
+                        </label><a href="tel:{{ pdata.usertel }}">
+                        <input type="text" readonly="readonly" value="{{ pdata.usertel }}" style="color: dodgerblue"/>
+                        </a>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            剩余名额
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.yunum }}/{{ pdata.num }}"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团队员：
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ xdata.username }}"/>
+                    </div>
+                {% for p in product %}
+                    <div class="ui-form-item ui-border-b">
+                        <label style="color: red">{{ p.name }}</label>
+                        <input type="text" name="w{{ forloop.counter }}" hidden="hidden" value="{{ p.name }}">
+                        <div class="ui-select-group">
+                            <div class="ui-select">
+                                <select>
+                                    <option>{{ p.price }}元</option>
+                                </select>
+                            </div>
+                            <div class="ui-select">
+                                <select>
+                                    <option>{{ p.count }}份</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系方式
+                        </label><a href="tel:{{ xdata.tel }}">
+                        <input type="text" name="tel" value="{{ xdata.tel }}" style="color: dodgerblue" readonly="readonly"/></a>
+                    </div>
+                    <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                        <label>
+                            备注说明
+                        </label>
+                        <textarea name="remark" maxlength="50" readonly="readonly">{{ xdata.remark }}</textarea>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

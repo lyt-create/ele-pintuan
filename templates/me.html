@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block header %}我{% endblock %}
+{% block content %}
+<section class="ui-container">
+
+<div class="demo-item" style="margin-top: 10%">
+        <div class="demo-block">
+            <ul class="ui-list ui-border-tb">
+                <li class="ui-border-t">
+                    <div class="ui-avatar">
+                        <span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">{{ request.user.username }}</h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<div class="demo-item">
+        <div class="demo-block">
+            <ul class="ui-list ui-list-function ui-list-link ui-border-tb">
+                <li class="ui-border-t">
+                    <div class="ui-avatar-s">
+                        <span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap" style="color: dodgerblue"><a href="mydata.html?userid={{ request.user.id }}">我的资料</a></h4>
+                    </div>
+
+                </li>
+                <li  class="ui-border-t">
+                    <div class="ui-avatar-s">
+                        <span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap" style="color: dodgerblue"><a href="myorder.html">我的订单</a></h4>
+                    </div>
+                </li>
+                <li  class="ui-border-t">
+                    <div class="ui-avatar-s">
+                        <span style="background-image:url()"></span>
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap" style="color: dodgerblue"><a href="modelset.html?userid={{ request.user.id }}">模板设置</a></h4>
+                    </div>
+                </li>
+                <li  class="ui-border-t">
+                    <div class="ui-avatar-s">
+                        <span style="background-image:url()"></span>
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap" style="color: dodgerblue"><a href="tuanlist.html?userid={{ request.user.id }}">我发起的拼团</a></h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<div class="demo-block" style="margin-top: 20%">
+    <div class="ui-btn-wrap">
+        <a href="logout.html"><button class="ui-btn-lg ui-btn-primary">注销登陆</button></a>
+    </div>
+</div>
+
+</section>
+{% endblock %}

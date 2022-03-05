@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block header %}拼团信息{% endblock %}
+{% block content %}
+<section class="ui-container">
+<div class="demo-item" style="margin-top: 3%">
+        <div class="demo-block">
+            <div class="ui-form ui-border-t">
+                <form action="#">
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团编码：
+                        </label>
+                        <input type="text" />
+                    </div><br><br>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团名称
+                        </label>
+                        <input type="text" />
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团队长
+                        </label>
+                        <input type="text" />
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系团长
+                        </label>
+                        <input type="text" />
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团状态
+                        </label>
+                        <input type="text" />
+                    </div>
+
+                    <div class="ui-form-item ui-border-b">
+                        <label>拼团物品</label>
+                        <div class="ui-select-group">
+                            <div class="ui-select">
+                                <select>
+                                    <option selected="">饺子</option>
+                                </select>
+                            </div>
+                            <div class="ui-select">
+                                <select>
+                                    <option selected="">17元</option>
+                                </select>
+                            </div>
+                            <div class="ui-select">
+                                <select>
+                                    <option>21</option>
+                                    <option selected="">0份</option>
+                                    <option>23</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系方式
+                        </label>
+                        <input type="text" />
+                    </div>
+                    <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                        <label>
+                            备注说明
+                        </label>
+                        <textarea placeholder="备注说明"></textarea>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block header %}拼团订单{% endblock %}
+{% block content %}
+<section class="ui-container">
+    <section id="table">
+    {% for a in alldata %}
+    <div class="demo-item">
+        <p class="demo-desc" style="color: dodgerblue">拼团{{ forloop.counter }}：{{ a.subject }}</p>
+        <div class="demo-block">
+            <table class="ui-table ui-border-tb">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>金额</th>
+                    <th>余量</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for b in a.data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    {% if a.level == 1 %}
+                    <td><a href="look.html?pid={{ a.pid }}&name={{ b.name }}">{{ b.name }}</a></td>
+                    {% elif b.name == request.user.username %}
+                    <td><a href="look.html?pid={{ a.pid }}&name={{ b.name }}">{{ b.name }}</a></td>
+                    {% else %}
+                    <td>{{ b.name }}</td>
+                    {% endif %}
+                    <td>{{ b.cost }}</td>
+
+                    {% if a.level == 1 %}
+                    <td><a href="del.html?pid={{ a.pid }}&name={{ b.name }}" onClick="return confirm('确定删除用户?');">{{ b.progress }}</a></td>
+                    <td><a href="deal.html?pid={{ a.pid }}&name={{ b.name }}" onClick="return confirm('确定已支付?');">{{ b.state }}</a></td>
+                    {% else %}
+                        <td>{{ b.progress }}</td>
+                    <td>{{ b.state }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="demo-desc" style="color: red">价格汇总：{{ a.money }}元</p>
+        <div class="demo-block">
+            <table class="ui-table ui-border-tb">
+                <thead>
+                <tr>
+                    <th>物品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in a.price %}
+                <tr>
+                    <td>{{ c.name }}</td>
+                    <td>{{ c.price }}</td>
+                    <td>{{ c.num }}</td>
+                    <td>{{ c.count }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="demo-block" style="margin-top: 2%">
+            <div class="ui-progress">
+                <span style="width:100%"></span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </section>
+
+
+
+
+
+
+</section>
+{% endblock %}

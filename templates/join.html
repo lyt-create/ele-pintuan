@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block header %}加入拼团{% endblock %}
+{% block content %}
+<section class="ui-container">
+<div class="demo-item" style="margin-top: 3%">
+        <div class="demo-block">
+            <div class="ui-form ui-border-t">
+                <form action="" method="post">{% csrf_token %}
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团编码：
+                        </label>
+                        <input name="pinid" type="text"  value="{{ pdata.pid }}" readonly="readonly"/>
+                    </div><br>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团名称
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.name }}"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            拼团队长
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.username }}"/>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系团长
+                        </label><a href="tel:{{ pdata.usertel }}">
+                        <input type="text" readonly="readonly" value="{{ pdata.usertel }}" style="color: dodgerblue"/>
+                        </a>
+                    </div>
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            剩余名额
+                        </label>
+                        <input type="text" readonly="readonly" value="{{ pdata.yunum }}/{{ pdata.num }}"/>
+                    </div>
+                {% for p in product %}
+                    <div class="ui-form-item ui-border-b">
+                        <label style="color: red">{{ p.name }}</label>
+                        <input type="text" name="w{{ forloop.counter }}" hidden="hidden" value="{{ p.name }}">
+                        <div class="ui-select-group">
+                            <div class="ui-select">
+                                <select name="p{{ forloop.counter }}">
+                                    <option value="{{ p.price }}">{{ p.price }}元</option>
+                                </select>
+                            </div>
+                            <div class="ui-select">
+                                <select name="c{{ forloop.counter }}">
+                                    <option value="0">0份</option>
+                                    <option value="1">1份</option>
+                                    <option value="2">2份</option>
+                                    <option value="3">3份</option>
+                                    <option value="4">4份</option>
+                                    <option value="5">5份</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                    <div class="ui-form-item ui-border-b">
+                        <label>
+                            联系方式
+                        </label>
+                        <input type="text" name="tel" value="{{ request.user.tel }}" style="color: dodgerblue"/>
+                    </div>
+                    <div class="ui-form-item ui-form-item-textarea ui-border-b">
+                        <label>
+                            备注说明
+                        </label>
+                        <textarea name="remark" maxlength="50">{{ pdata.remark }}</textarea>
+                    </div>
+                    <div class="demo-block" style="margin-top: 15%">
+                        <div class="ui-btn-wrap">
+                                <button class="ui-btn-lg ui-btn-primary" onclick="javascript:return sub()" type="button">
+                                    加入拼团
+                                </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <script>
+    function sub() {
+        var msg = "您真的确定要入团吗？\n\n";
+        if (confirm(msg)==true){
+            $("form").submit();
+        }else{
+            return false;
+        }
+    }
+    </script>
+{% endblock %}
